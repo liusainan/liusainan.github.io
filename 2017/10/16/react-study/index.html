@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Hexo</title>
+  <title>react开发环境配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="环境实现：  兼容ie8 webpack打包 scss html-webpack-plugin配置生成html  前提：已安装node、npm , package.json可以自己新建，或者npm init自动生成。参照如下（各个工具包对版本有限制，安装的时候注意控制台提示）12345678910111213141516171819202122232425262728293031323334&amp;#1">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react开发环境配置">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/react-study/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="环境实现：  兼容ie8 webpack打包 scss html-webpack-plugin配置生成html  前提：已安装node、npm , package.json可以自己新建，或者npm init自动生成。参照如下（各个工具包对版本有限制，安装的时候注意控制台提示）12345678910111213141516171819202122232425262728293031323334&amp;#1">
+<meta property="og:updated_time" content="2017-10-16T06:38:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="react开发环境配置">
+<meta name="twitter:description" content="环境实现：  兼容ie8 webpack打包 scss html-webpack-plugin配置生成html  前提：已安装node、npm , package.json可以自己新建，或者npm init自动生成。参照如下（各个工具包对版本有限制，安装的时候注意控制台提示）12345678910111213141516171819202122232425262728293031323334&amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -145,36 +150,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-react-study" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/10/16/react-study/" class="archive-article-date">
-  	<time datetime="2017-10-16T06:19:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/10/16/react-study/">react开发环境配置</a>
+    <h1 class="article-title" itemprop="name">
+      react开发环境配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/10/16/react-study/" class="archive-article-date">
+  	<time datetime="2017-10-16T06:19:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+    
+      
+        <p>环境实现：</p>
+<ol>
+<li>兼容ie8</li>
+<li>webpack打包</li>
+<li>scss</li>
+<li>html-webpack-plugin配置生成html</li>
+</ol>
+<p>前提：已安装node、npm , package.json可以自己新建，或者npm init自动生成。参照如下（各个工具包对版本有限制，安装的时候注意控制台提示）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;project&quot;,</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</div><div class="line">  &quot;description&quot;: &quot;react demo&quot;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;webpack&quot;,</div><div class="line">    &quot;dev&quot;: &quot;webpack-dev-server --progress --profile --colors --hot --inline&quot;,</div><div class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;author&quot;: &quot;snan&quot;,</div><div class="line">  &quot;license&quot;: &quot;ISC&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;console-polyfill&quot;: &quot;^0.3.0&quot;,</div><div class="line">    &quot;es5-shim&quot;: &quot;^4.5.9&quot;,</div><div class="line">    &quot;react&quot;: &quot;^0.14.3&quot;,</div><div class="line">    &quot;react-dom&quot;: &quot;^0.14.3&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;babel-core&quot;: &quot;^6.26.0&quot;,</div><div class="line">    &quot;babel-loader&quot;: &quot;^6.2.1&quot;,</div><div class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.24.1&quot;,</div><div class="line">    &quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,</div><div class="line">    &quot;babel-preset-stage-0&quot;: &quot;^6.24.1&quot;,</div><div class="line">    &quot;css-loader&quot;: &quot;^0.28.7&quot;,</div><div class="line">    &quot;file-loader&quot;: &quot;^0.8.5&quot;,</div><div class="line">    &quot;html-webpack-plugin&quot;: &quot;^2.7.2&quot;,</div><div class="line">    &quot;node-sass&quot;: &quot;^3.4.2&quot;,</div><div class="line">    &quot;sass-loader&quot;: &quot;^3.1.2&quot;,</div><div class="line">    &quot;style-loader&quot;: &quot;^0.19.0&quot;,</div><div class="line">    &quot;url-loader&quot;: &quot;^0.6.2&quot;,</div><div class="line">    &quot;webpack&quot;: &quot;^1.12.12&quot;,</div><div class="line">    &quot;webpack-dev-server&quot;: &quot;^1.14.1&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在项目目录新建.babelrc，保存以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [&quot;es2015&quot;, &quot;stage-0&quot;, &quot;react&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>兼容ie8依赖包es5-shim、console-polyfill，在入口文件使用，必须在最顶部引入：(遇到其他问题，参考<a href="https://github.com/xcatliu/react-ie8" target="_blank" rel="external">react-ie8</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">require(&apos;es5-shim&apos;);</div><div class="line">require(&apos;es5-shim/es5-sham&apos;);</div><div class="line">require(&apos;console-polyfill&apos;);</div><div class="line">require(&apos;./assets/index.scss&apos;);</div><div class="line"></div><div class="line">/**</div><div class="line"> * CANNOT use `import` to import `react` or `react-dom`,</div><div class="line"> * because `import` will run `react` before `require(&apos;es5-shim&apos;)`.</div><div class="line"> */</div><div class="line">// import React from &apos;react&apos;;</div><div class="line">// import ReactDOM from &apos;react-dom&apos;;</div><div class="line"></div><div class="line">const React = require(&apos;react&apos;);</div><div class="line">const ReactDOM = require(&apos;react-dom&apos;);</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,7 +221,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -199,153 +234,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/16/react-study/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/28/css-stepAnimate/" class="archive-article-date">
-  	<time datetime="2017-09-28T08:50:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/28/css-stepAnimate/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css实现gif效果</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/css-stepAnimate/">css实现gif效果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">css动画</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/css//" class="article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/28/vue-start/" class="archive-article-date">
-  	<time datetime="2017-09-28T03:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/vue-start/">vue start</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/框架学习//" class="article-tag-list-link color5">框架学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/27/hello-world/" class="archive-article-date">
-  	<time datetime="2017-09-27T07:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -368,8 +354,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
