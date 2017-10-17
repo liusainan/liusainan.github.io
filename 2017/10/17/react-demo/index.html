@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>react开发环境配置 | snanHome</title>
+  <title>react入门学习 | snanHome</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境实现 兼容ie8 webpack打包（多页应用脚手架） scss(利用extract-text-webpack-plugin打包成css文件) html-webpack-plugin配置生成html  工程目录 说明：1.将dist放在项目目录之外，是模拟static开发路径，之后新建多个项目可以实现独立打包，且统一打包到dist目录，将开发代码和上线时提交到服务器的代码独立开，我们只需要把d">
+  <meta name="description" content="1.jsx入门2.react组件3.贴一个入门教程：阮一峰的网络日志4.用fetch代替ajax5.webpack入门">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react开发环境配置">
-<meta property="og:url" content="http://yoursite.com/2017/10/16/react-study/index.html">
+<meta property="og:title" content="react入门学习">
+<meta property="og:url" content="http://yoursite.com/2017/10/17/react-demo/index.html">
 <meta property="og:site_name" content="snanHome">
-<meta property="og:description" content="环境实现 兼容ie8 webpack打包（多页应用脚手架） scss(利用extract-text-webpack-plugin打包成css文件) html-webpack-plugin配置生成html  工程目录 说明：1.将dist放在项目目录之外，是模拟static开发路径，之后新建多个项目可以实现独立打包，且统一打包到dist目录，将开发代码和上线时提交到服务器的代码独立开，我们只需要把d">
-<meta property="og:image" content="http://yoursite.com/assets/react1.png">
-<meta property="og:updated_time" content="2017-10-17T09:25:49.000Z">
+<meta property="og:description" content="1.jsx入门2.react组件3.贴一个入门教程：阮一峰的网络日志4.用fetch代替ajax5.webpack入门">
+<meta property="og:updated_time" content="2017-10-17T09:43:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react开发环境配置">
-<meta name="twitter:description" content="环境实现 兼容ie8 webpack打包（多页应用脚手架） scss(利用extract-text-webpack-plugin打包成css文件) html-webpack-plugin配置生成html  工程目录 说明：1.将dist放在项目目录之外，是模拟static开发路径，之后新建多个项目可以实现独立打包，且统一打包到dist目录，将开发代码和上线时提交到服务器的代码独立开，我们只需要把d">
-<meta name="twitter:image" content="http://yoursite.com/assets/react1.png">
+<meta name="twitter:title" content="react入门学习">
+<meta name="twitter:description" content="1.jsx入门2.react组件3.贴一个入门教程：阮一峰的网络日志4.用fetch代替ajax5.webpack入门">
   
     <link rel="alternative" href="/atom.xml" title="snanHome" type="application/atom+xml">
   
@@ -152,20 +150,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-react-study" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react-demo" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      react开发环境配置
+      react入门学习
     </h1>
   
 
         
-        <a href="/2017/10/16/react-study/" class="archive-article-date">
-  	<time datetime="2017-10-16T06:19:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+        <a href="/2017/10/17/react-demo/" class="archive-article-date">
+  	<time datetime="2017-10-17T09:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-17</time>
 </a>
         
       </header>
@@ -173,19 +171,7 @@
     <div class="article-entry" itemprop="articleBody">
     
       
-        <h3 id="环境实现"><a href="#环境实现" class="headerlink" title="环境实现"></a>环境实现</h3><ol>
-<li>兼容ie8</li>
-<li>webpack打包（多页应用脚手架）</li>
-<li>scss(利用extract-text-webpack-plugin打包成css文件)</li>
-<li>html-webpack-plugin配置生成html</li>
-</ol>
-<h3 id="工程目录"><a href="#工程目录" class="headerlink" title="工程目录"></a>工程目录</h3><p><img src="/assets/react1.png" alt="img1"></p>
-<p>说明：<br>1.将dist放在项目目录之外，是模拟static开发路径，之后新建多个项目可以实现独立打包，且统一打包到dist目录，将开发代码和上线时提交到服务器的代码独立开，我们只需要把dist目录提交到线上服务器。<br>2.如项目project下有两个页面index、app, 页面内部可新建assets（静态资源）, components(组件)等目录<br>3.页面入口，如：project/app/entry.jsx<br>4.scss或css中的图片路径，只需写相对路径，打包时会自动生成绝对路径，图片统一打包到/dist/&lt; 项目名称 &gt;/images<br>5.html打包时自动生成, 名称和路径对应页面入口文件, 见3</p>
-<h3 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h3><p>前提：已安装node、npm , package.json可以自己新建，或者npm init自动生成。参照如下（各个工具包对版本有限制，安装的时候注意控制台提示）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;project&quot;,</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</div><div class="line">  &quot;description&quot;: &quot;react demo&quot;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;rm -rf ./dist/* &amp;&amp; NODE_ENV=production webpack&quot;,</div><div class="line">    &quot;dev&quot;: &quot;NODE_ENV=dev webpack-dev-server --progress --profile --colors --hot --inline&quot;,</div><div class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;author&quot;: &quot;snan&quot;,</div><div class="line">  &quot;license&quot;: &quot;ISC&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;console-polyfill&quot;: &quot;^0.3.0&quot;,</div><div class="line">    &quot;es5-shim&quot;: &quot;^4.5.9&quot;,</div><div class="line">    &quot;es6-promise&quot;: &quot;^3.0.2&quot;,</div><div class="line">    &quot;fetch-ie8&quot;: &quot;^1.4.0&quot;,</div><div class="line">    &quot;react&quot;: &quot;^0.14.3&quot;,</div><div class="line">    &quot;react-dom&quot;: &quot;^0.14.3&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;babel-core&quot;: &quot;^6.26.0&quot;,</div><div class="line">    &quot;babel-loader&quot;: &quot;^6.2.1&quot;,</div><div class="line">    &quot;babel-preset-es2015&quot;: &quot;^6.24.1&quot;,</div><div class="line">    &quot;babel-preset-react&quot;: &quot;^6.24.1&quot;,</div><div class="line">    &quot;babel-preset-stage-0&quot;: &quot;^6.24.1&quot;,</div><div class="line">    &quot;css-loader&quot;: &quot;^0.28.7&quot;,</div><div class="line">    &quot;extract-text-webpack-plugin&quot;: &quot;^0.9.1&quot;,</div><div class="line">    &quot;file-loader&quot;: &quot;^0.8.5&quot;,</div><div class="line">    &quot;html-webpack-plugin&quot;: &quot;^2.7.2&quot;,</div><div class="line">    &quot;node-sass&quot;: &quot;^3.4.2&quot;,</div><div class="line">    &quot;sass-loader&quot;: &quot;^3.1.2&quot;,</div><div class="line">    &quot;style-loader&quot;: &quot;^0.19.0&quot;,</div><div class="line">    &quot;url-loader&quot;: &quot;^0.6.2&quot;,</div><div class="line">    &quot;webpack&quot;: &quot;^1.12.12&quot;,</div><div class="line">    &quot;webpack-dev-server&quot;: &quot;^1.14.1&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在项目目录新建.babelrc，保存以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [&quot;es2015&quot;, &quot;stage-0&quot;, &quot;react&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>兼容ie8依赖包es5-shim、console-polyfill，在入口文件使用，必须在最顶部引入：(遇到其他问题，参考<a href="https://github.com/xcatliu/react-ie8" target="_blank" rel="external">react-ie8</a>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">require(&apos;es5-shim&apos;);</div><div class="line">require(&apos;es5-shim/es5-sham&apos;);</div><div class="line">require(&apos;console-polyfill&apos;);</div><div class="line">require(&apos;./assets/index.scss&apos;);</div><div class="line"></div><div class="line">/**</div><div class="line"> * CANNOT use `import` to import `react` or `react-dom`,</div><div class="line"> * because `import` will run `react` before `require(&apos;es5-shim&apos;)`.</div><div class="line"> */</div><div class="line">// import React from &apos;react&apos;;</div><div class="line">// import ReactDOM from &apos;react-dom&apos;;</div><div class="line"></div><div class="line">const React = require(&apos;react&apos;);</div><div class="line">const ReactDOM = require(&apos;react-dom&apos;);</div></pre></td></tr></table></figure></p>
-<p>webpack.config.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var glob = require(&apos;glob&apos;);</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);</div><div class="line">var HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);</div><div class="line">var pgk = require(&apos;./package.json&apos;);</div><div class="line"></div><div class="line">var ROOT_PATH = path.resolve(__dirname);</div><div class="line">var APP_PATH = path.resolve(ROOT_PATH, &apos;app&apos;);</div><div class="line">var BUILD_PATH = path.resolve(&apos;./../&apos;, &apos;dist&apos;);</div><div class="line">// var TEM_PATH = path.resolve(ROOT_PATH, &apos;demo&apos;); // html模板</div><div class="line"></div><div class="line">// 判断是否是在当前生产环境</div><div class="line">var isProduction = process.env.NODE_ENV === &apos;production&apos;;</div><div class="line"></div><div class="line">// 获取所有入口文件</div><div class="line">var getEntry = function(globPath) &#123;</div><div class="line">    var entries = &#123;&#125;;</div><div class="line">    glob.sync(globPath).forEach(function(entry) &#123;</div><div class="line">        var pathname = entry.split(&apos;/&apos;).splice(-2).join(&apos;/&apos;).split(&apos;.&apos;)[0];</div><div class="line">        entries[pathname] = [entry];</div><div class="line">    &#125;);</div><div class="line">    console.log(entries);</div><div class="line">    return entries;</div><div class="line">&#125;;</div><div class="line">var entries = getEntry(&apos;./*/entry.jsx&apos;);</div><div class="line"></div><div class="line">module.exports= &#123;</div><div class="line">  entry: entries,</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(BUILD_PATH, pgk.name),</div><div class="line">    filename: &apos;[name].js&apos;,</div><div class="line">    publicPath: isProduction ? &apos;/up/react/dist/&apos;+pgk.name+&apos;/&apos; : &apos;/&apos;+pgk.name+&apos;/&apos;</div><div class="line">  &#125;,</div><div class="line">  resolve: &#123;</div><div class="line">    extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.jsx&apos;]</div><div class="line">  &#125;,</div><div class="line">  //启动dev source map，出错以后就会采用source-map的形式直接显示你出错代码的位置。</div><div class="line">  devtool: &apos;eval-source-map&apos;,</div><div class="line">  //enable dev server</div><div class="line">  devServer: &#123;</div><div class="line">    publicPath: &apos;/&apos;+pgk.name+&apos;/&apos;,</div><div class="line">    historyApiFallback: true,</div><div class="line">    hot: true,</div><div class="line">    inline: true,</div><div class="line">    progress: true,</div><div class="line">    host: &apos;127.0.0.1&apos;,</div><div class="line">    //只要配置dev server map这个参数就可以了</div><div class="line">    proxy:&#123;</div><div class="line">      &apos;/api/*&apos;:&#123;</div><div class="line">        target: &apos;http://localhost:8080&apos;,</div><div class="line">        secure: false</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  //babel重要的loader在这里</div><div class="line">  module: &#123;</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.jsx?$/,</div><div class="line">        loader: &apos;babel-loader&apos;,</div><div class="line">        include: APP_PATH,</div><div class="line">        query: &#123;</div><div class="line">          //添加两个presents 使用这两种presets处理js或者jsx文件</div><div class="line">          presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/, </div><div class="line">        loader: ExtractTextPlugin.extract(&apos;style&apos;, &apos;css&apos;)</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.scss$/, </div><div class="line">        loader: ExtractTextPlugin.extract(&apos;style&apos;, &apos;css!sass&apos;)</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">　　　　　　test: /\.(png|jpg|gif)$/,</div><div class="line">　　　　　　loader: &apos;url-loader?limit=10000&amp;name=images/[name].[hash:8].[ext]&apos;</div><div class="line">　　　 &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    new ExtractTextPlugin(&quot;[name].css&quot;)   //单独使用style标签加载css并设置其路径</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line">// 生成HTML文件</div><div class="line">var chunks = [];</div><div class="line">for(var o in entries)&#123;</div><div class="line">  chunks.push(o);</div><div class="line">&#125;;</div><div class="line">chunks.forEach(function(pathname) &#123;</div><div class="line">    var conf = &#123;</div><div class="line">        title: &apos;My App&apos;,</div><div class="line">        filename: pathname + &apos;.html&apos;,</div><div class="line">        inject: true</div><div class="line">    &#125;;</div><div class="line">    if (pathname in module.exports.entry) &#123;</div><div class="line">        conf.chunks = [pathname];</div><div class="line">    &#125;</div><div class="line">    module.exports.plugins.push(new HtmlWebpackPlugin(conf));</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="测试和打包"><a href="#测试和打包" class="headerlink" title="测试和打包"></a>测试和打包</h3><p>npm run dev // 访问”devServer.proxy.target/&lt;项目名称&gt;/&lt;页面名称&gt;/entry.html”，如：<a href="http://localhost:8080/project/app/entry.html" target="_blank" rel="external">http://localhost:8080/project/app/entry.html</a><br>npm run build // 打包</p>
+        <p>1.<a href="https://mp.weixin.qq.com/s?__biz=MzAxMTUyMDg2NQ==&amp;mid=2452472255&amp;idx=1&amp;sn=42c6915b086506aafb36170f764588c5&amp;chksm=8c66bfb1bb1136a7acde6949063555bb000fdd3bd240abe981ee9cc4e60c6c885aad13d710f7&amp;mpshare=1&amp;scene=1&amp;srcid=0828fy8HIC4XXOfQMKwWSfyK&amp;key=05d58d453d781a667e411026cd6d9cc1230f63492d26f6b5efed11dccf5aacc8610a2e8245ce1a1895ea48569924df5a216e6c7f3e3157eadb9cba120923d03704a6ce8af4aa7a6ffe5785d4da289afa&amp;ascene=0&amp;uin=NDg2MzA0NzM1" target="_blank" rel="external">jsx入门</a><br>2.<a href="https://reactjs.org/docs/react-component.html" target="_blank" rel="external">react组件</a><br>3.贴一个入门教程：<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">阮一峰的网络日志</a><br>4.<a href="https://segmentfault.com/a/1190000003810652" target="_blank" rel="external">用fetch代替ajax</a><br>5.<a href="https://doc.webpack-china.org/guides/getting-started/" target="_blank" rel="external">webpack入门</a></p>
 
       
 
@@ -287,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/16/react-study/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/10/17/react-demo/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +287,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/10/17/react-demo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          react入门学习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/28/css-stepAnimate/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css实现gif效果</div>
+    <a href="/2017/10/16/react-study/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react开发环境配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
